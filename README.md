@@ -24,3 +24,15 @@ The last 24 months are held out. No random split, that would leak the future int
 - 144 points is very little data for anything beyond classical methods, so it's no surprise Holt-Winters is hard to beat.
 - Errors in recursive forecasting compound, you can see the boosted model drift further out.
 - Next: add prediction intervals, and try SARIMA for comparison.
+
+## Results
+
+From a run on the default split (seed 42):
+
+Last 24 months held out.
+
+| method | MAE (passengers) | MAPE (%) |
+|---|---|---|
+| seasonal_naive | 71.2 | 15.5 |
+| holt_winters | 29.0 | 6.4 |
+| boosted_ratios | 52.2 | 11.7 |
